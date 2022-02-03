@@ -30,6 +30,7 @@ const app = express();
 // for unique ID's with duplicate requests at the same time, defaults to / which normally
 // denotes subdirectories
 app.use(ruid({ setInContext: true, prefixSeparator: "-" }));
+app.use(express.static('public'))
 
 // deletes saved files and the directory they are in.
 const cleanUploads = async (uniqueId) => {
